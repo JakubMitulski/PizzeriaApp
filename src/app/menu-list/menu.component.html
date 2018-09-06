@@ -1,0 +1,30 @@
+<div style="text-align: center">
+
+  <nav>
+    <div class="buttons">
+      <button (click)="getPizzas($event)">Pizza</button>
+      <button (click)="getPastas($event)">Pasta</button>
+      <button (click)="getDrinks($event)">Drink</button>
+    </div>
+  </nav>
+
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Price</td>
+    </tr>
+    <tr *ngFor="let meal of meals">
+      <td>{{meal.id}}</td>
+      <td>{{meal.name}}</td>
+      <td>{{meal.description}}</td>
+      <td>{{meal.price}}</td>
+    </tr>
+  </table>
+
+  <nav class="small-nav">
+    <a routerLink="/">Back to main page</a>
+  </nav>
+
+</div>
