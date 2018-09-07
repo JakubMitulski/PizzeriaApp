@@ -1,0 +1,28 @@
+<div style="text-align: center">
+
+<div class="buttons">
+  <button disabled>Your order:</button>
+</div>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Price</td>
+  </tr>
+  <tr *ngFor="let meal of meals">
+    <td>{{meal.id}}</td>
+    <td>{{meal.name}}</td>
+    <td>{{meal.description}}</td>
+    <td>{{meal.price}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Total price: </td>
+    <td>{{orderService.calculatePrice()}}</td>
+  </tr>
+</table>
+
+</div>

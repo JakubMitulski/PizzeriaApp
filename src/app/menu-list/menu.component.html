@@ -2,9 +2,9 @@
 
   <nav>
     <div class="buttons">
-      <button (click)="getPizzas($event)">Pizza</button>
-      <button (click)="getPastas($event)">Pasta</button>
-      <button (click)="getDrinks($event)">Drink</button>
+      <button (click)="getPizzas()">Pizza</button>
+      <button (click)="getPastas()">Pasta</button>
+      <button (click)="getDrinks()">Drink</button>
     </div>
   </nav>
 
@@ -14,12 +14,20 @@
       <td>Name</td>
       <td>Description</td>
       <td>Price</td>
+      <td>Details</td>
+      <td>Order</td>
     </tr>
     <tr *ngFor="let meal of meals">
       <td>{{meal.id}}</td>
       <td>{{meal.name}}</td>
       <td>{{meal.description}}</td>
       <td>{{meal.price}}</td>
+      <td>
+        <button style="font-size: 15px; color: black;" (click)="getDetails(meal.id)">Details</button>
+      </td>
+      <td>
+        <button style="font-size: 15px; color: black;" (click)="addItemToOrder(meal)">Add</button>
+      </td>
     </tr>
   </table>
 
@@ -27,4 +35,6 @@
     <a routerLink="/">Back to main page</a>
   </nav>
 
+
 </div>
+

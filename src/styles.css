@@ -69,6 +69,23 @@ button:active {
   color: #039be5;
 }
 
+button:disabled,
+button[disabled]{
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-flex;
+  background-color: #eee;
+  opacity: 0.7;
+  border-radius: 4px;
+  border: none;
+  cursor: unset;
+  font-family: Verdana, sans-serif;
+  font-size: 25px;
+  line-height: 1.5;
+  color: #607D8B;
+}
+
 .header {
   width: 100%;
   height: 75px;
@@ -87,3 +104,71 @@ button:active {
   margin: 20px;
   justify-content: right;
 }
+
+table {
+  margin: 10px auto;
+  border-collapse: collapse;
+  border: 1px solid lightgrey;
+  width: 50%;
+  vertical-align: center;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  opacity: 0.7;
+}
+
+tr:nth-child(odd) {
+  background-color: #e5dfe5;
+  opacity: 0.7;
+}
+
+.buttons {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.small-nav a {
+  font-size: 15px;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 15px;
+  display: inline-block;
+  background-color: #eee;
+  opacity: 0.7;
+  border-radius: 4px;
+}
+
+.small-nav a:visited, a:link {
+  color: #607D8B;
+}
+
+.small-nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+
+.small-nav a.active {
+  color: #039be5;
+}
+
+.details {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 50px;
+  background-color: #eee;
+  opacity: 0.7;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #607D8B;
+}
+

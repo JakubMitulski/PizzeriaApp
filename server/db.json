@@ -18,14 +18,6 @@
     },
     {
       "id": 3,
-      "name": "Kebeb w bułce",
-      "isAvailable": true,
-      "description": "Chrupiąca bułka z dodatkiem kebabu drobiowego, kapusty pekińskiej, pomidora, ogórka zielonego",
-      "type": "fastfood",
-      "price": "13.90"
-    },
-    {
-      "id": 4,
       "name": "Spagetti Bolognese",
       "isAvailable": false,
       "description": "Sos boloński",
@@ -33,7 +25,7 @@
       "price": "14"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Spagetti Siciliana",
       "isAvailable": true,
       "description": "Sos boloński z szynką i kukurydzą",
@@ -41,7 +33,7 @@
       "price": "17.50"
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Pepsi",
       "isAvailable": true,
       "description": "Zimna pepsi z bąbelkami",
@@ -49,7 +41,7 @@
       "price": "7.50"
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Coca-cola",
       "isAvailable": true,
       "description": "Klasyczna coca-cola z lodem",
