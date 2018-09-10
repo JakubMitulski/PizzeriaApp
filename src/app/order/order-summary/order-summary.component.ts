@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Order} from "../model/order";
-import {Meal} from "../model/meal";
-import {OrderService} from "../services/order.service";
+import {Order} from "../../model/order";
+import {Meal} from "../../model/meal";
+import {OrderService} from "../../services/order.service";
 import {Router} from "@angular/router";
 
 

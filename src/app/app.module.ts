@@ -6,10 +6,13 @@ import {MenuComponent} from './menu-list/menu.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { MealDetailComponent } from './menu-list-item/meal-detail.component';
-import { OrderComponent } from './order-list/order.component';
-import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { OrderComponent } from './order/order.component';
+import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OrderInfoComponent } from './order-info/order-info.component';
+import { OrderInfoComponent } from './order/order-info/order-info.component';
+import { LoginComponent } from './login/login.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { LoginFailureComponent } from './login/login-failure/login-failure.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { OrderInfoComponent } from './order-info/order-info.component';
     OrderComponent,
     OrderSummaryComponent,
     OrderInfoComponent,
+    LoginComponent,
+    AdminPageComponent,
+    LoginFailureComponent,
   ],
   imports: [
     BrowserModule,

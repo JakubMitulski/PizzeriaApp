@@ -1,0 +1,13 @@
+<div style="margin: auto; vertical-align: center; width: 40%">
+  <div class="details" style="text-align: center">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <br>Login:
+      <input type="text" formControlName="login">
+      <br>
+      <br>Password:
+      <input type="text" formControlName="password">
+      <br><br>
+      <button class="small-nav" type="submit">Login</button>
+    </form>
+  </div>
+</div>

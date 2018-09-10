@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
   }
 
   getMealById(id: number) {
-    this.menuService.getMealById(id).subscribe(meal => this.meal = meal)
+    this.menuService.getMealById(id).subscribe(meal => this.meal = meal);
   }
 
   getDetails(id: number) {

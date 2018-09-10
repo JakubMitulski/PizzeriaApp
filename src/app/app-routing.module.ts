@@ -2,11 +2,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {MenuComponent} from "./menu-list/menu.component";
 import {MealDetailComponent} from "./menu-list-item/meal-detail.component";
-import {OrderComponent} from "./order-list/order.component";
-import {OrderSummaryComponent} from "./order-summary/order-summary.component";
-import {OrderInfoComponent} from "./order-info/order-info.component";
+import {OrderComponent} from "./order/order.component";
+import {OrderSummaryComponent} from "./order/order-summary/order-summary.component";
+import {OrderInfoComponent} from "./order/order-info/order-info.component";
+import {LoginComponent} from "./login/login.component";
+import {AdminPageComponent} from "./admin-page/admin-page.component";
+import {LoginFailureComponent} from "./login/login-failure/login-failure.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: '/menu',  pathMatch: 'full'},
   {path: 'menu', component: MenuComponent},
   {path: 'pizza', component: MenuComponent},
   {path: 'pasta', component: MenuComponent},
@@ -15,6 +19,9 @@ const routes: Routes = [
   {path: 'order', component: OrderComponent},
   {path: 'summary', component: OrderSummaryComponent},
   {path: 'info', component: OrderInfoComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'admin', component: AdminPageComponent},
+  {path: 'login-failure', component: LoginFailureComponent},
 ];
 
 @NgModule({

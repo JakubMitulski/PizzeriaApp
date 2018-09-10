@@ -2,7 +2,7 @@
   <span style="margin-right: auto">Ristorante Pizzeria</span>
   <nav>
     <a routerLink="/menu">Menu</a>
-    <a routerLink="/" >Login</a>
+    <a routerLink="/login" *ngIf="!loginService.getLoginState()">Login</a>
     <a routerLink="/order" >Order</a>
   </nav>
 </div>
