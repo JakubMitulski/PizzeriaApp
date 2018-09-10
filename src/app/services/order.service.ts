@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Meal} from "../meal";
+import {Meal} from "../model/meal";
+import {Order} from "../model/order";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +11,8 @@ export class OrderService {
 
   meals: Meal[] = [];
 
-  constructor() {
-  }
+  constructor(
+    private http: HttpClient) { }
 
   addItemToOrder(meal: Meal) {
     this.meals.push(meal);
@@ -23,13 +26,13 @@ export class OrderService {
     return this.meals;
   }
 
-  getMeals(): Meal[] {
-    return this.meals;
-  }
-
   calculatePrice() {
     let totalPrice: number = 0;
     this.meals.forEach(meal => totalPrice = +totalPrice + +meal.price);
     return totalPrice;
+  }
+
+  saveOrder(order: Order): Observable<Order>{
+    return this.http.post<Order>('http://localhost:3000/orders', order);
   }
 }

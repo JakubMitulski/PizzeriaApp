@@ -1,0 +1,24 @@
+<div style="margin: auto; vertical-align: center; width: 40%">
+  <div class="details" style="text-align: center">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <br>First name:
+      <input type="text" formControlName="firstName" value="Your firstname">
+      <br>
+      <br>Last name:
+      <input type="text" formControlName="lastName" value="Your lastname">
+      <br>
+      <br>Address:
+      <input type="text" formControlName="address" value="Delivery address">
+      <br>
+      <br>Phone number:
+      <input type="text" formControlName="phone" value="Phone number">
+      <br><br>
+      <button class="small-nav" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+

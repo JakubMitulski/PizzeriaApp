@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Meal} from "../meal";
+import {Meal} from "../model/meal";
 import {ActivatedRoute} from "@angular/router";
 import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
@@ -20,15 +20,8 @@ export class MealDetailComponent implements OnInit { //
     private orderService: OrderService,
   ) { }
 
-  // ngOnInit(): void {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.menuService.getMealById(id)
-  //     .subscribe(meal => this.meal = meal);
-  // }
-
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-
     this.menuService.getMealById(+id)
       //.pipe(takeUntil(this.destroy$))
       .subscribe(res => this.meal = res);

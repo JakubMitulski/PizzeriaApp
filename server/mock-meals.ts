@@ -1,4 +1,4 @@
-import {Meal} from "../src/app/meal";
+import {Meal} from "../src/app/model/meal";
 
 export const MEALS: Meal[] = [
   {

@@ -165,7 +165,7 @@ tr:nth-child(odd) {
   opacity: 0.7;
   border-radius: 4px;
   border: none;
-  cursor: pointer;
+  cursor: unset;
   font-family: Verdana, sans-serif;
   font-size: 20px;
   line-height: 1.5;

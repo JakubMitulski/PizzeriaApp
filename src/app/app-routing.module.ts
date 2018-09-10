@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {MenuComponent} from "./menu-list/menu.component";
 import {MealDetailComponent} from "./menu-list-item/meal-detail.component";
 import {OrderComponent} from "./order-list/order.component";
+import {OrderSummaryComponent} from "./order-summary/order-summary.component";
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'drink', component: MenuComponent},
   {path: 'menu/:id', component: MealDetailComponent},
   {path: 'order', component: OrderComponent},
+  {path: 'summary', component: OrderSummaryComponent},
 ];
 
 @NgModule({

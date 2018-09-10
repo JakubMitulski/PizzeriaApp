@@ -6,7 +6,7 @@
       "isAvailable": true,
       "description": "Sos, ser",
       "type": "pizza",
-      "price": "22"
+      "price": "22.00"
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "isAvailable": false,
       "description": "Sos boloński",
       "type": "pasta",
-      "price": "14"
+      "price": "14.00"
     },
     {
       "id": 4,
@@ -46,13 +46,48 @@
       "isAvailable": true,
       "description": "Klasyczna coca-cola z lodem",
       "type": "drink",
-      "price": "7.49"
+      "price": "7.00"
     }
   ],
   "orders": [
     {
-      "id": 1,
-      "dishIds": [1, 5]
+      "firstName": "ASDFG",
+      "lastName": "ASDFGH",
+      "address": "SDFGH",
+      "phone": "234567",
+      "status": "order",
+      "mealIds": [
+        1,
+        2
+      ],
+      "orderDate": "2018-09-10T10:28:05.894Z",
+      "id": 1
+    },
+    {
+      "firstName": "QWERT",
+      "lastName": "QWERTYUIO",
+      "address": "DSFGH",
+      "phone": "234567",
+      "status": "order",
+      "mealIds": [
+        2,
+        6
+      ],
+      "orderDate": "2018-09-10T10:31:18.226Z",
+      "id": 2
+    },
+    {
+      "firstName": "wwww",
+      "lastName": "sdfgds",
+      "address": "asdfdsa",
+      "phone": "12345",
+      "status": "order",
+      "mealIds": [
+        2,
+        4
+      ],
+      "orderDate": "2018-09-10T10:54:52.777Z",
+      "id": 3
     }
   ],
   "users": [

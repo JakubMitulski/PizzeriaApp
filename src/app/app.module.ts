@@ -7,6 +7,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { MealDetailComponent } from './menu-list-item/meal-detail.component';
 import { OrderComponent } from './order-list/order.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { OrderComponent } from './order-list/order.component';
     MenuComponent,
     MealDetailComponent,
     OrderComponent,
+    OrderSummaryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
