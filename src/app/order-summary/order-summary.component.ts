@@ -41,7 +41,7 @@ export class OrderSummaryComponent implements OnInit {
     this.order.mealIds = this.mealsIds;
     this.order.orderDate = new Date();
     this.orderService.saveOrder(this.order).subscribe();
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/info']);
   }
 
   getMeals() {

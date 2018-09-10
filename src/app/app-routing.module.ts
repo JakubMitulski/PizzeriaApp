@@ -4,6 +4,7 @@ import {MenuComponent} from "./menu-list/menu.component";
 import {MealDetailComponent} from "./menu-list-item/meal-detail.component";
 import {OrderComponent} from "./order-list/order.component";
 import {OrderSummaryComponent} from "./order-summary/order-summary.component";
+import {OrderInfoComponent} from "./order-info/order-info.component";
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'menu/:id', component: MealDetailComponent},
   {path: 'order', component: OrderComponent},
   {path: 'summary', component: OrderSummaryComponent},
+  {path: 'info', component: OrderInfoComponent},
 ];
 
 @NgModule({

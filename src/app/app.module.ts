@@ -9,6 +9,7 @@ import { MealDetailComponent } from './menu-list-item/meal-detail.component';
 import { OrderComponent } from './order-list/order.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OrderInfoComponent } from './order-info/order-info.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MealDetailComponent,
     OrderComponent,
     OrderSummaryComponent,
+    OrderInfoComponent,
   ],
   imports: [
     BrowserModule,
