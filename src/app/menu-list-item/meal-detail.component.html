@@ -1,8 +1,16 @@
 <div style="margin: auto; vertical-align: center; width: 40%">
+
   <div class="details" style="text-align: center">
     <h3>{{meal?.name | uppercase}} Details</h3>
+
     <div><span>name: </span>{{meal?.name}}</div>
     <div><span>description: </span>{{meal?.description}}</div>
     <div><span>price: </span>{{meal?.price}}</div>
+
+    <nav class="small-nav">
+      <a *ngIf="loginService.getLoginState()" routerLink="/admin">Back to menu</a>
+      <a *ngIf="!loginService.getLoginState()" routerLink="/menu">Back to menu</a>
+    </nav>
   </div>
+
 </div>

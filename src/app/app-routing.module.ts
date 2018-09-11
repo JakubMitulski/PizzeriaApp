@@ -8,6 +8,7 @@ import {OrderInfoComponent} from "./order/order-info/order-info.component";
 import {LoginComponent} from "./login/login.component";
 import {AdminPageComponent} from "./admin-page/admin-page.component";
 import {LoginFailureComponent} from "./login/login-failure/login-failure.component";
+import {OrderListComponent} from "./order/order-list/order-list.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/menu',  pathMatch: 'full'},
@@ -22,7 +23,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminPageComponent},
   {path: 'login-failure', component: LoginFailureComponent},
+  {path: 'orders', component: OrderListComponent},
 ];
+
+//TODO dodac guarda can activate
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -2,16 +2,16 @@
   <div class="details" style="text-align: center">
     <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
       <br>First name:
-      <input type="text" formControlName="firstName" value="Your firstname">
+      <input type="text" formControlName="firstName" value="Your firstname" required minlength="3">
       <br>
       <br>Last name:
-      <input type="text" formControlName="lastName" value="Your lastname">
+      <input type="text" formControlName="lastName" value="Your lastname" required minlength="3">
       <br>
       <br>Address:
-      <input type="text" formControlName="address" value="Delivery address">
+      <input type="text" formControlName="address" value="Delivery address" required minlength="3">
       <br>
       <br>Phone number:
-      <input type="text" formControlName="phone" value="Phone number">
+      <input type="text" formControlName="phone" value="Phone number" required minlength="3">
       <br><br>
       <button class="small-nav" type="submit">Submit</button>
     </form>

@@ -13,6 +13,7 @@ import { OrderInfoComponent } from './order/order-info/order-info.component';
 import { LoginComponent } from './login/login.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { LoginFailureComponent } from './login/login-failure/login-failure.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { LoginFailureComponent } from './login/login-failure/login-failure.compo
     LoginComponent,
     AdminPageComponent,
     LoginFailureComponent,
+    OrderListComponent,
   ],
   imports: [
     BrowserModule,

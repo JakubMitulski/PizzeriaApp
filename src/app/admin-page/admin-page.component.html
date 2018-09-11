@@ -1,12 +1,39 @@
-<div class="admin" style="margin-top: 50px">
+<div style="text-align: center">
 
   <nav>
-    <div style="text-align: center">
+    <div>
       <button class="admin-feature" (click)="loginService.logOut()">Logout</button>
       <button class="admin-feature" routerLink="/admin">Menu</button>
-      <button class="admin-feature" routerLink="/admin">Orders</button>
+      <button class="admin-feature" routerLink="/orders">Orders</button>
     </div>
   </nav>
+
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Price</td>
+      <td>Availability</td>
+      <td>Details</td>
+    </tr>
+    <tr *ngFor="let meal of meals">
+      <td>{{meal.id}}</td>
+      <td>{{meal.name}}</td>
+      <td>{{meal.description}}</td>
+      <td>{{meal.price}}</td>
+      <td *ngIf="meal.isAvailable">
+        <button style="font-size: 15px; color: black;" (click)="setAvailability(meal, false)">YES</button>
+      </td>
+      <td *ngIf="!meal.isAvailable">
+        <button style="font-size: 15px; color: black;" (click)="setAvailability(meal, true)">NO</button>
+      </td>
+      <td>
+        <button style="font-size: 15px; color: black;" (click)="getDetails(meal.id)">Details</button>
+      </td>
+
+    </tr>
+  </table>
 
 </div>
 

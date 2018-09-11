@@ -12,7 +12,8 @@ export class OrderService {
   meals: Meal[] = [];
 
   constructor(
-    private http: HttpClient) { }
+    private http: HttpClient) {
+  }
 
   addItemToOrder(meal: Meal) {
     this.meals.push(meal);
@@ -32,7 +33,11 @@ export class OrderService {
     return totalPrice;
   }
 
-  saveOrder(order: Order): Observable<Order>{
+  saveOrder(order: Order): Observable<Order> {
     return this.http.post<Order>('http://localhost:3000/orders', order);
+  }
+
+  getAllOrders(): Observable<Order[]>{
+    return this.http.get<Order[]>('http://localhost:3000/orders');
   }
 }

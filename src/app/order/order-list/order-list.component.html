@@ -1,0 +1,31 @@
+<div style="text-align: center">
+
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>First name</td>
+      <td>Last name</td>
+      <td>Address</td>
+      <td>Phone</td>
+      <td>Status</td>
+      <td>Meals</td>
+      <td>Order date</td>
+      <td>Order details</td>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td>{{order.id}}</td>
+      <td>{{order.firstName}}</td>
+      <td>{{order.lastName}}</td>
+      <td>{{order.address}}</td>
+      <td>{{order.phone}}</td>
+      <td>{{order.status}}</td>
+      <td>{{order.mealIds}}</td>
+      <td>{{order.orderDate}}</td>
+      <td>
+        <button style="font-size: 15px; color: black;">Details</button>
+      </td>
+    </tr>
+  </table>
+
+</div>
+

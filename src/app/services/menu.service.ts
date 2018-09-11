@@ -11,23 +11,32 @@ export class MenuService {
   constructor(
     private http: HttpClient) { }
 
-  getMeals(): Observable<Meal[]>{
+  getAllMeals(): Observable<Meal[]>{
+    return this.http.get<Meal[]>('http://localhost:3000/meals');
+  }
+
+  getAvailableMeals(): Observable<Meal[]>{
     return this.http.get<Meal[]>('http://localhost:3000/meals?isAvailable=true');
   }
 
-  getPizzas(): Observable<Meal[]>{
+  getAvailablePizzas(): Observable<Meal[]>{
     return this.http.get<Meal[]>('http://localhost:3000/meals?type=pizza&&isAvailable=true');
   }
 
-  getPastas(): Observable<Meal[]>{
+  getAvailablePastas(): Observable<Meal[]>{
     return this.http.get<Meal[]>('http://localhost:3000/meals?type=pasta&&isAvailable=true');
   }
 
-  getDrinks(): Observable<Meal[]>{
+  getAvailableDrinks(): Observable<Meal[]>{
     return this.http.get<Meal[]>('http://localhost:3000/meals?type=drink&&isAvailable=true');
   }
 
   getMealById(id: number): Observable<Meal> {
     return this.http.get<Meal>(`http://localhost:3000/meals/${id}`);
+  }
+
+  setAvailability(meal: Meal, availability: boolean): Observable<Meal>{
+    meal.isAvailable = availability;
+    return this.http.put<Meal>(`http://localhost:3000/meals/${meal.id}`, meal);
   }
 }

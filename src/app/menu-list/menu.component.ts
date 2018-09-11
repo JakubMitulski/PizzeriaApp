@@ -24,19 +24,19 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.menuService.getMeals().subscribe(meals => this.meals = meals);
+    this.menuService.getAvailableMeals().subscribe(meals => this.meals = meals);
   }
 
   getPizzas() {
-    this.menuService.getPizzas().subscribe(meals => this.meals = meals);
+    this.menuService.getAvailablePizzas().subscribe(meals => this.meals = meals);
   }
 
   getPastas() {
-    this.menuService.getPastas().subscribe(meals => this.meals = meals);
+    this.menuService.getAvailablePastas().subscribe(meals => this.meals = meals);
   }
 
   getDrinks() {
-    this.menuService.getDrinks().subscribe(meals => this.meals = meals);
+    this.menuService.getAvailableDrinks().subscribe(meals => this.meals = meals);
   }
 
   getMealById(id: number) {

@@ -2,8 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Meal} from "../model/meal";
 import {ActivatedRoute} from "@angular/router";
 import {MenuService} from "../services/menu.service";
-import {OrderService} from "../services/order.service";
-import {takeUntil} from "rxjs/operators";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-meal-detail',
@@ -17,13 +16,12 @@ export class MealDetailComponent implements OnInit { //
   constructor(
     private route: ActivatedRoute,
     private menuService: MenuService,
-    private orderService: OrderService,
+    public loginService: LoginService,
   ) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.menuService.getMealById(+id)
-      //.pipe(takeUntil(this.destroy$))
       .subscribe(res => this.meal = res);
   }
 
