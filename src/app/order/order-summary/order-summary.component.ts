@@ -38,7 +38,8 @@ export class OrderSummaryComponent implements OnInit {
     this.order.address = this.orderForm.get('address').value;
     this.order.phone = this.orderForm.get('phone').value;
     this.order.status = 'order';
-    this.order.mealIds = this.mealsIds;
+    // this.order.mealIds = this.mealsIds;
+    this.order.meals = this.meals;
     this.order.orderDate = new Date();
     this.orderService.saveOrder(this.order).subscribe();
     this.router.navigate(['/info']);

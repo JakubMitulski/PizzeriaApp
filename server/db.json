@@ -51,71 +51,93 @@
   ],
   "orders": [
     {
-      "firstName": "ASDFG",
-      "lastName": "ASDFGH",
-      "address": "SDFGH",
-      "phone": "234567",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "address": "Poznań, Poznanska 12",
+      "phone": "77777777",
       "status": "order",
-      "mealIds": [
-        1,
-        2
+      "meals": [
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": true,
+          "description": "Sos, ser",
+          "type": "pizza",
+          "price": "22.00"
+        },
+        {
+          "id": 5,
+          "name": "Pepsi",
+          "isAvailable": true,
+          "description": "Zimna pepsi z bąbelkami",
+          "type": "drink",
+          "price": "7.50"
+        }
       ],
-      "orderDate": "2018-09-10T10:28:05.894Z",
+      "orderDate": "2018-09-11T19:57:35.642Z",
       "id": 1
     },
     {
-      "firstName": "QWERT",
-      "lastName": "QWERTYUIO",
-      "address": "DSFGH",
-      "phone": "234567",
+      "firstName": "Wacław",
+      "lastName": "Nowak",
+      "address": "Wrocław, Wrocławska 10",
+      "phone": "665443668",
       "status": "order",
-      "mealIds": [
-        2,
-        6
+      "meals": [
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "type": "pizza",
+          "price": "23.50"
+        },
+        {
+          "id": 3,
+          "name": "Spagetti Bolognese",
+          "isAvailable": true,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": "14.00"
+        },
+        {
+          "id": 5,
+          "name": "Pepsi",
+          "isAvailable": true,
+          "description": "Zimna pepsi z bąbelkami",
+          "type": "drink",
+          "price": "7.50"
+        }
       ],
-      "orderDate": "2018-09-10T10:31:18.226Z",
+      "orderDate": "2018-09-11T19:58:19.649Z",
       "id": 2
     },
     {
-      "firstName": "wwww",
-      "lastName": "sdfgds",
-      "address": "asdfdsa",
-      "phone": "12345",
+      "firstName": "Zygmunt",
+      "lastName": "Kowalski",
+      "address": "Kraków, Krakowska 7",
+      "phone": "717618982",
       "status": "order",
-      "mealIds": [
-        2,
-        4
+      "meals": [
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": true,
+          "description": "Klasyczna coca-cola z lodem",
+          "type": "drink",
+          "price": "7.00"
+        },
+        {
+          "id": 3,
+          "name": "Spagetti Bolognese",
+          "isAvailable": true,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": "14.00"
+        }
       ],
-      "orderDate": "2018-09-10T10:54:52.777Z",
+      "orderDate": "2018-09-11T19:58:56.810Z",
       "id": 3
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "address": "",
-      "phone": "",
-      "status": "order",
-      "mealIds": [
-        3,
-        2
-      ],
-      "orderDate": "2018-09-11T12:50:05.121Z",
-      "id": 4
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "address": "",
-      "phone": "",
-      "status": "order",
-      "mealIds": [
-        3,
-        2,
-        6,
-        1
-      ],
-      "orderDate": "2018-09-11T12:50:10.993Z",
-      "id": 5
     }
   ],
   "users": [

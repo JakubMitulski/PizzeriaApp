@@ -1,0 +1,35 @@
+<div style="margin: auto; vertical-align: center; width: 60%;">
+
+  <div class="details" style="text-align: center">
+    <h3>Order number {{order?.id}} - details</h3>
+    <div><span>Customer: </span>{{order?.firstName}} {{order?.lastName}}</div>
+    <div><span>Delivery address: </span>{{order?.address}}</div>
+    <div><span>Contact phone: </span>{{order?.phone}}</div>
+    <div><span>Current status: </span>{{order?.status}}</div>
+    <div><span>Order date: </span>{{order?.orderDate}}</div>
+    <br>
+
+    <div style="text-align: center"><span>Ordered meals: </span></div>
+    <table style="font-family: Verdana, sans-serif;
+           font-size: 15px; color: #000000">
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+      </tr>
+      <tr *ngFor="let meal of meals">
+        <td>{{meal.id}}</td>
+        <td>{{meal.name}}</td>
+        <td>{{meal.description}}</td>
+        <td>{{meal.price}}</td>
+      </tr>
+    </table>
+
+    <nav class="small-nav">
+      <a routerLink="/orders">Back to orders</a>
+    </nav>
+
+  </div>
+
+</div>

@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Meal} from "../model/meal";
+import {Meal} from "../../model/meal";
 import {ActivatedRoute} from "@angular/router";
-import {MenuService} from "../services/menu.service";
-import {LoginService} from "../services/login.service";
+import {MenuService} from "../../services/menu.service";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-meal-detail',
@@ -11,19 +11,18 @@ import {LoginService} from "../services/login.service";
 })
 export class MealDetailComponent implements OnInit { //
 
-@Input() meal: Meal;
+  @Input() meal: Meal;
 
   constructor(
     private route: ActivatedRoute,
     private menuService: MenuService,
     public loginService: LoginService,
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.menuService.getMealById(+id)
       .subscribe(res => this.meal = res);
   }
-
-
 }

@@ -1,10 +1,13 @@
-export interface Order {
+import {Meal} from "./meal";
+
+export class Order {
   id: number;
   firstName: string;
   lastName: string;
   address: string;
   phone: number;
   status: string;
-  mealIds: number[];
+  // mealIds: number[];
+  meals: Meal[];
   orderDate: Date;
 }

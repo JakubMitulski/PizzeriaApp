@@ -39,16 +39,16 @@ export class MenuComponent implements OnInit {
     this.menuService.getAvailableDrinks().subscribe(meals => this.meals = meals);
   }
 
-  getMealById(id: number) {
-    this.menuService.getMealById(id).subscribe(meal => this.meal = meal);
-  }
-
   getDetails(id: number) {
     this.router.navigate(['/menu', id]);
   }
 
   addItemToOrder(meal: Meal) {
     this.orderService.addItemToOrder(meal);
+  }
+
+  getMealById(id: number) {
+    this.menuService.getMealById(id).subscribe(meal => this.meal = meal);
   }
 
 }

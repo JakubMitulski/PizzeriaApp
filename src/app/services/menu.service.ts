@@ -39,4 +39,5 @@ export class MenuService {
     meal.isAvailable = availability;
     return this.http.put<Meal>(`http://localhost:3000/meals/${meal.id}`, meal);
   }
+
 }
