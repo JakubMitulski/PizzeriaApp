@@ -15,7 +15,6 @@ export class OrderSummaryComponent implements OnInit {
 
   order: Order;
   meals: Meal[] = [];
-  mealsIds: number[] = [];
 
   orderForm = new FormGroup({
     firstName: new FormControl(''),
@@ -29,7 +28,7 @@ export class OrderSummaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.produceMealIdsArray();
+    this.meals = this.orderService.getOrder();
   }
 
   onSubmit() {
@@ -38,20 +37,11 @@ export class OrderSummaryComponent implements OnInit {
     this.order.address = this.orderForm.get('address').value;
     this.order.phone = this.orderForm.get('phone').value;
     this.order.status = 'order';
-    // this.order.mealIds = this.mealsIds;
     this.order.meals = this.meals;
     this.order.orderDate = new Date();
     this.orderService.saveOrder(this.order).subscribe();
+    this.orderService.clearOrder();
     this.router.navigate(['/info']);
-  }
-
-  getMeals() {
-    return this.orderService.getOrder();
-  }
-
-  produceMealIdsArray(): void {
-    this.meals = this.getMeals();
-    this.meals.forEach(meal => this.mealsIds.push(meal.id));
   }
 
 }

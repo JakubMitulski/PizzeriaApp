@@ -138,6 +138,25 @@
       ],
       "orderDate": "2018-09-11T19:58:56.810Z",
       "id": 3
+    },
+    {
+      "firstName": "Krzysztof",
+      "lastName": "Kola",
+      "address": "Gdańsk, Gdyńska 2",
+      "phone": "567298304",
+      "status": "order",
+      "meals": [
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": true,
+          "description": "Klasyczna coca-cola z lodem",
+          "type": "drink",
+          "price": "7.00"
+        }
+      ],
+      "orderDate": "2018-09-11T20:35:58.085Z",
+      "id": 4
     }
   ],
   "users": [
