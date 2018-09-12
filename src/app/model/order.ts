@@ -7,7 +7,6 @@ export class Order {
   address: string;
   phone: number;
   status: string;
-  // mealIds: number[];
   meals: Meal[];
   orderDate: Date;
 }
