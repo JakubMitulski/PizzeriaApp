@@ -11,12 +11,12 @@ import {Meal} from "../../model/meal";
 })
 export class OrderDetailsComponent implements OnInit {
 
-  @Input() order: Order;
+  order: Order;
   meals: Meal[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService,
+    public orderService: OrderService,
   ) {
   }
 
@@ -29,4 +29,7 @@ export class OrderDetailsComponent implements OnInit {
       });
   }
 
+  saveStatus(order: Order) {
+    this.orderService.saveStatus(order).subscribe();
+  }
 }

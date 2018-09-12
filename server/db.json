@@ -55,7 +55,7 @@
       "lastName": "Kowalski",
       "address": "Poznań, Poznanska 12",
       "phone": "77777777",
-      "status": "order",
+      "status": "closed",
       "meals": [
         {
           "id": 1,
@@ -82,7 +82,7 @@
       "lastName": "Nowak",
       "address": "Wrocław, Wrocławska 10",
       "phone": "665443668",
-      "status": "order",
+      "status": "ready",
       "meals": [
         {
           "id": 2,
@@ -117,7 +117,7 @@
       "lastName": "Kowalski",
       "address": "Kraków, Krakowska 7",
       "phone": "717618982",
-      "status": "order",
+      "status": "in progress",
       "meals": [
         {
           "id": 6,
@@ -144,7 +144,7 @@
       "lastName": "Kola",
       "address": "Gdańsk, Gdyńska 2",
       "phone": "567298304",
-      "status": "order",
+      "status": "ordered",
       "meals": [
         {
           "id": 6,

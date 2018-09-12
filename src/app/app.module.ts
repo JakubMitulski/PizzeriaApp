@@ -8,7 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MealDetailComponent } from './menu/meal-details/meal-detail.component';
 import { OrderComponent } from './order/order.component';
 import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { OrderInfoComponent } from './order/order-info/order-info.component';
 import { LoginComponent } from './login/login.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
@@ -35,7 +35,8 @@ import { OrderDetailsComponent } from './order/order-details/order-details.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

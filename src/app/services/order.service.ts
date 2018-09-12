@@ -44,4 +44,8 @@ export class OrderService {
   getOrderById(id: number): Observable<Order> {
     return this.http.get<Order>(`http://localhost:3000/orders/${id}`);
   }
+
+  saveStatus(order: Order): Observable<Order>{
+    return this.http.put<Order>(`http://localhost:3000/orders/${order.id}`, order);
+  }
 }

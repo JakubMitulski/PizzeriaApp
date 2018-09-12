@@ -32,5 +32,4 @@ export class AdminPageComponent implements OnInit {
   setAvailability(meal: Meal, availability: boolean) {
     this.menuService.setAvailability(meal, availability).subscribe();
   }
-
 }

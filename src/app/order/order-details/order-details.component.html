@@ -5,8 +5,18 @@
     <div><span>Customer: </span>{{order?.firstName}} {{order?.lastName}}</div>
     <div><span>Delivery address: </span>{{order?.address}}</div>
     <div><span>Contact phone: </span>{{order?.phone}}</div>
-    <div><span>Current status: </span>{{order?.status}}</div>
     <div><span>Order date: </span>{{order?.orderDate}}</div>
+    <div>
+      <span>Change status:
+        <select style="font-size: 20px; color: #607D8B;" [(ngModel)]="order.status">
+         <option value="ordered">Ordered</option>
+          <option value="in progress">In progress</option>
+          <option value="ready">Ready</option>
+        <option value="closed">Closed</option>
+        </select>
+        <button style="font-size: 20px" (click)="saveStatus(order)">Save</button>
+      </span>
+    </div>
     <br>
 
     <div style="text-align: center"><span>Ordered meals: </span></div>
