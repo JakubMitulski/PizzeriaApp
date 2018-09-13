@@ -5,7 +5,8 @@ html, body {
 }
 
 body {
-  background: url("https://bit.ly/2MQy0QO") no-repeat fixed center;
+  background: url("https://bit.ly/2MQy0QO");
+  background-size: cover;
 }
 
 h1 {
@@ -106,7 +107,7 @@ button[disabled]{
 }
 
 table {
-  margin: 10px auto;
+  margin: auto;
   border-collapse: collapse;
   width: 60%;
   vertical-align: center;

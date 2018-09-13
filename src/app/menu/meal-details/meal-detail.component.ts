@@ -11,7 +11,7 @@ import {LoginService} from "../../services/login.service";
 })
 export class MealDetailComponent implements OnInit { //
 
-  @Input() meal: Meal;
+  meal: Meal;
 
   constructor(
     private route: ActivatedRoute,

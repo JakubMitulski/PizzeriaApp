@@ -11,7 +11,7 @@ import {Meal} from "../../model/meal";
 })
 export class OrderDetailsComponent implements OnInit {
 
-  order: Order;
+  order: Order = <Order>{status: ""};
   meals: Meal[] = [];
 
   constructor(

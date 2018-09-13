@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrderListComponent } from './order-list.component';
+import {OrderListComponent} from './order-list.component';
+import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('OrderListComponent', () => {
   let component: OrderListComponent;
@@ -8,9 +11,13 @@ describe('OrderListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderListComponent ]
+      declarations: [OrderListComponent],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
