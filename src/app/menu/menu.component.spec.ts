@@ -36,4 +36,38 @@ describe('MenuComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get pizzas from menu', () => {
+    //Given
+    const getPizzas = spyOn(component, 'getPizzas');
+
+    //When
+    component.getPizzas();
+
+    //Then
+    expect(getPizzas).toHaveBeenCalled();
+  });
+
+  it('should get pastas from menu', () => {
+    //Given
+    const getPastas = spyOn(component, 'getPastas');
+
+    //When
+    component.getPastas();
+
+    //Then
+    expect(getPastas).toHaveBeenCalled();
+  });
+
+  it('should get drinks from menu', () => {
+    //Given
+    const getDrinks = spyOn(component, 'getDrinks');
+
+    //When
+    component.getDrinks();
+
+    //Then
+    expect(getDrinks).toHaveBeenCalled();
+  });
+
 });
