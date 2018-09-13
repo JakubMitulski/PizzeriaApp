@@ -47,8 +47,4 @@ export class MenuComponent implements OnInit {
     this.orderService.addItemToOrder(meal);
   }
 
-  getMealById(id: number) {
-    this.menuService.getMealById(id).subscribe(meal => this.meal = meal);
-  }
-
 }

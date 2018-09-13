@@ -1,18 +1,28 @@
 import {inject, TestBed} from '@angular/core/testing';
 
 import {OrderService} from './order.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RouterTestingModule} from "@angular/router/testing";
 import {Meal} from "../model/meal";
 import {Order} from "../model/order";
+import {MenuService} from "./menu.service";
+import {of} from "rxjs";
 
 describe('OrderService', () => {
   beforeEach(() => {
+    // const orderServiceMock = jasmine.createSpyObj('HttpClientModule', ['post']);
+
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
         HttpClientModule
       ],
+
+      // imports: [
+      //   RouterTestingModule,
+      //   {provide: HttpClientModule, useClass: httpMock}
+      // ],
+
     });
   });
 
@@ -63,14 +73,15 @@ describe('OrderService', () => {
 
   it('should save order', inject([OrderService], (service: OrderService) => {
     //Given
-    const save = jasmine.createSpy( 'this.http.post');
+    const clientModule = TestBed.get(HttpClient);
+    const postSpy = spyOn(clientModule, 'post');
     const order = <Order>{};
 
     //When
     service.saveOrder(order);
 
     //Then
-    expect(save).toHaveBeenCalled();
+    expect(postSpy).toHaveBeenCalled();
   }));
 
 });

@@ -1,17 +1,20 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 
 import {MenuComponent} from './menu.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {RouterTestingModule} from "@angular/router/testing";
+import {of} from "rxjs";
+import {Order} from "../model/order";
+import {Router} from "@angular/router";
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
 
   beforeEach(async(() => {
-    const locationValue = jasmine.createSpy('Location');
+
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
       providers: [
@@ -37,37 +40,43 @@ describe('MenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get pizzas from menu', () => {
+  it('should call service after component-getPizzas method call', inject([MenuService], (service: MenuService) => {
     //Given
-    const getPizzas = spyOn(component, 'getPizzas');
+    const menuService = TestBed.get(MenuService);
+    const getAvailablePizzasSpy = spyOn(menuService, 'getAvailablePizzas').and.returnValue(of([]));
 
     //When
     component.getPizzas();
 
     //Then
-    expect(getPizzas).toHaveBeenCalled();
-  });
+    expect(getAvailablePizzasSpy).toHaveBeenCalled();
+  }));
 
-  it('should get pastas from menu', () => {
+  it('should test getPizzas method', inject([MenuService], (service: MenuService) => {
     //Given
-    const getPastas = spyOn(component, 'getPastas');
+    const menuService = TestBed.get(MenuService);
+    const getAvailablePizzasSpy = spyOn(menuService, 'getAvailablePizzas').and.returnValue(of([]));
 
     //When
-    component.getPastas();
+    component.getPizzas();
 
     //Then
-    expect(getPastas).toHaveBeenCalled();
-  });
+    expect(getAvailablePizzasSpy).toHaveBeenCalled();
+  }));
 
-  it('should get drinks from menu', () => {
+  it('should test getDetails method', inject([OrderService], (service: OrderService) => {
     //Given
-    const getDrinks = spyOn(component, 'getDrinks');
+    const routerModule = TestBed.get(Router);
+    const navigateSpy = spyOn(routerModule, 'navigate');
+    const id = 1;
 
     //When
-    component.getDrinks();
+    component.getDetails(id);
 
     //Then
-    expect(getDrinks).toHaveBeenCalled();
-  });
+    expect(navigateSpy).toHaveBeenCalled();
+  }));
+
+
 
 });
