@@ -1,13 +1,13 @@
 import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 
 import {MenuComponent} from './menu.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {MenuService} from "../services/menu.service";
 import {OrderService} from "../services/order.service";
 import {RouterTestingModule} from "@angular/router/testing";
 import {of} from "rxjs";
-import {Order} from "../model/order";
 import {Router} from "@angular/router";
+import {Meal} from "../model/meal";
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -20,7 +20,7 @@ describe('MenuComponent', () => {
       providers: [
         MenuService,
         OrderService,
-        ],
+      ],
       imports: [
         RouterTestingModule,
         HttpClientModule,
@@ -64,6 +64,30 @@ describe('MenuComponent', () => {
     expect(getAvailablePizzasSpy).toHaveBeenCalled();
   }));
 
+  it('should test getPastas method', inject([MenuService], (service: MenuService) => {
+    //Given
+    const menuService = TestBed.get(MenuService);
+    const getAvailablePastasSpy = spyOn(menuService, 'getAvailablePastas').and.returnValue(of([]));
+
+    //When
+    component.getPastas();
+
+    //Then
+    expect(getAvailablePastasSpy).toHaveBeenCalled();
+  }));
+
+  it('should test getDrinks method', inject([MenuService], (service: MenuService) => {
+    //Given
+    const menuService = TestBed.get(MenuService);
+    const getAvailableDrinksSpy = spyOn(menuService, 'getAvailableDrinks').and.returnValue(of([]));
+
+    //When
+    component.getDrinks();
+
+    //Then
+    expect(getAvailableDrinksSpy).toHaveBeenCalled();
+  }));
+
   it('should test getDetails method', inject([OrderService], (service: OrderService) => {
     //Given
     const routerModule = TestBed.get(Router);
@@ -77,6 +101,29 @@ describe('MenuComponent', () => {
     expect(navigateSpy).toHaveBeenCalled();
   }));
 
+  it('should test addItemToOrder method', inject([OrderService], (service: OrderService) => {
+    //Given
+    const orderService = TestBed.get(OrderService);
+    const orderServiceSpy = spyOn(orderService, 'addItemToOrder');
+    const meal = <Meal>{};
 
+    //When
+    component.addItemToOrder(meal);
+
+    //Then
+    expect(orderServiceSpy).toHaveBeenCalled();
+  }));
+
+  it('should test ngOnInit method', inject([OrderService], (service: OrderService) => {
+    //Given
+    const menuService = TestBed.get(MenuService);
+    const menuServiceSpy = spyOn(menuService, 'getAvailableMeals').and.returnValue(of([]));
+
+    //When
+    component.ngOnInit();
+
+    //Then
+    expect(menuServiceSpy).toHaveBeenCalled();
+  }));
 
 });

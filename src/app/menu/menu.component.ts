@@ -46,5 +46,4 @@ export class MenuComponent implements OnInit {
   addItemToOrder(meal: Meal) {
     this.orderService.addItemToOrder(meal);
   }
-
 }

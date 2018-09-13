@@ -5,24 +5,15 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RouterTestingModule} from "@angular/router/testing";
 import {Meal} from "../model/meal";
 import {Order} from "../model/order";
-import {MenuService} from "./menu.service";
-import {of} from "rxjs";
 
 describe('OrderService', () => {
   beforeEach(() => {
-    // const orderServiceMock = jasmine.createSpyObj('HttpClientModule', ['post']);
 
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
         HttpClientModule
-      ],
-
-      // imports: [
-      //   RouterTestingModule,
-      //   {provide: HttpClientModule, useClass: httpMock}
-      // ],
-
+      ]
     });
   });
 
