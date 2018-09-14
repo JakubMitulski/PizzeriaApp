@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Order} from "../../model/order";
 import {Meal} from "../../model/meal";
 import {OrderService} from "../../services/order.service";
 import {Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 
 @Component({
@@ -11,10 +12,11 @@ import {Router} from "@angular/router";
   templateUrl: './order-summary.component.html',
   styleUrls: ['./order-summary.component.css']
 })
-export class OrderSummaryComponent implements OnInit {
+export class OrderSummaryComponent implements OnInit, OnDestroy {
 
   order: Order;
   meals: Meal[] = [];
+  sub: Subscription;
 
   orderForm = new FormGroup({
     firstName: new FormControl('', [ Validators.required ]),
@@ -39,8 +41,13 @@ export class OrderSummaryComponent implements OnInit {
     this.order.status = 'ordered';
     this.order.meals = this.meals;
     this.order.orderDate = new Date();
-    this.orderService.saveOrder(this.order).subscribe();
+    this.sub = this.orderService.saveOrder(this.order).subscribe();
     this.orderService.clearOrder();
     this.router.navigate(['/info']);
   }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
 }

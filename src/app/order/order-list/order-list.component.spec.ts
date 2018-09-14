@@ -1,8 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {OrderListComponent} from './order-list.component';
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 import {RouterTestingModule} from "@angular/router/testing";
 
 describe('OrderListComponent', () => {

@@ -1,18 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {LoginService} from "../services/login.service";
 import {MenuService} from "../services/menu.service";
 import {Meal} from "../model/meal";
 import {Router} from "@angular/router";
 import {OrderService} from "../services/order.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
   styleUrls: ['./admin-page.component.css']
 })
-export class AdminPageComponent implements OnInit {
+export class AdminPageComponent implements OnInit, OnDestroy {
 
   meals: Meal[];
+  sub: Subscription;
 
   constructor(public loginService: LoginService,
               public menuService: MenuService,
@@ -22,7 +24,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.menuService.getAllMeals().subscribe(meals => this.meals = meals);
+    this.sub = this.menuService.getAllMeals().subscribe(meals => this.meals = meals);
   }
 
   getDetails(id: number) {
@@ -30,6 +32,11 @@ export class AdminPageComponent implements OnInit {
   }
 
   setAvailability(meal: Meal, availability: boolean) {
-    this.menuService.setAvailability(meal, availability).subscribe();
+    this.sub = this.menuService.setAvailability(meal, availability).subscribe();
   }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
 }

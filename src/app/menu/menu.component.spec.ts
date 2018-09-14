@@ -40,18 +40,6 @@ describe('MenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call service after component-getPizzas method call', inject([MenuService], (service: MenuService) => {
-    //Given
-    const menuService = TestBed.get(MenuService);
-    const getAvailablePizzasSpy = spyOn(menuService, 'getAvailablePizzas').and.returnValue(of([]));
-
-    //When
-    component.getPizzas();
-
-    //Then
-    expect(getAvailablePizzasSpy).toHaveBeenCalled();
-  }));
-
   it('should test getPizzas method', inject([MenuService], (service: MenuService) => {
     //Given
     const menuService = TestBed.get(MenuService);
