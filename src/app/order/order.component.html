@@ -10,24 +10,29 @@
       <td>Name</td>
       <td>Description</td>
       <td>Price</td>
+      <td></td>
     </tr>
     <tr *ngFor="let meal of meals">
       <td>{{meal.id}}</td>
       <td>{{meal.name}}</td>
       <td>{{meal.description}}</td>
       <td>{{meal.price}}</td>
+      <td>
+        <button style="font-size: 15px; color: black;" (click)="removeItemFromOrder(meals.indexOf(meal))">Remove</button>
+      </td>
     </tr>
     <tr>
       <td></td>
       <td></td>
-      <td>Total price:</td>
+      <td style="text-align: right">Total price:</td>
       <td>{{orderService.calculatePrice()}}</td>
+      <td></td>
     </tr>
   </table>
 
   <nav class="small-nav">
     <a routerLink="/menu">Back to menu</a>
-    <a routerLink="/summary">Take your order</a>
+    <a routerLink="/summary" *ngIf="orderService.getOrder().length > 0">Take your order</a>
   </nav>
 
 </div>

@@ -48,4 +48,8 @@ export class OrderService {
   saveStatus(order: Order): Observable<Order>{
     return this.http.put<Order>(`http://localhost:3000/orders/${order.id}`, order);
   }
+
+  removeItemFromOrder(id: number) {
+    this.meals.splice(id, 1);
+  }
 }

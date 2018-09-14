@@ -18,4 +18,8 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
     this.meals = this.orderService.getOrder();
   }
+
+  removeItemFromOrder(id: number) {
+    this.orderService.removeItemFromOrder(id);
+  }
 }

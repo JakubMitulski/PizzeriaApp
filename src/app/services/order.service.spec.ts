@@ -22,10 +22,13 @@ describe('OrderService', () => {
   }));
 
   it('should add item to order', inject([OrderService], (service: OrderService) => {
+    //Given
     const meal = <Meal>{};
 
+    //When
     service.addItemToOrder(meal);
 
+    //Then
     expect(service.meals.length).toBe(1);
   }));
 
@@ -113,4 +116,15 @@ describe('OrderService', () => {
     expect(putSpy).toHaveBeenCalled();
   }));
 
+  it('should remove item from order', inject([OrderService], (service: OrderService) => {
+    //Given
+    const meal = <Meal>{};
+
+    //When
+    service.addItemToOrder(meal);
+    service.removeItemFromOrder(meal.id);
+
+    //Then
+    expect(service.meals.length).toBe(0);
+  }));
 });
