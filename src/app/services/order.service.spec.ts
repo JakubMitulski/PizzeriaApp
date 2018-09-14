@@ -62,7 +62,7 @@ describe('OrderService', () => {
     expect(service.calculatePrice()).toBe(30);
   }));
 
-  it('should save order', inject([OrderService], (service: OrderService) => {
+  it('should test saveOrder method', inject([OrderService], (service: OrderService) => {
     //Given
     const clientModule = TestBed.get(HttpClient);
     const postSpy = spyOn(clientModule, 'post');
@@ -73,6 +73,44 @@ describe('OrderService', () => {
 
     //Then
     expect(postSpy).toHaveBeenCalled();
+  }));
+
+  it('should test getAllOrders method', inject([OrderService], (service: OrderService) => {
+    //Given
+    const clientModule = TestBed.get(HttpClient);
+    const getSpy = spyOn(clientModule, 'get');
+
+    //When
+    service.getAllOrders();
+
+    //Then
+    expect(getSpy).toHaveBeenCalled();
+  }));
+
+  it('should test getOrderById method', inject([OrderService], (service: OrderService) => {
+    //Given
+    const clientModule = TestBed.get(HttpClient);
+    const getSpy = spyOn(clientModule, 'get');
+    const id = 1;
+
+    //When
+    service.getOrderById(id);
+
+    //Then
+    expect(getSpy).toHaveBeenCalled();
+  }));
+
+  it('should test saveStatus method', inject([OrderService], (service: OrderService) => {
+    //Given
+    const clientModule = TestBed.get(HttpClient);
+    const putSpy = spyOn(clientModule, 'put');
+    const order = <Order>{};
+
+    //When
+    service.saveStatus(order);
+
+    //Then
+    expect(putSpy).toHaveBeenCalled();
   }));
 
 });
