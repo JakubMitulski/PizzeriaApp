@@ -15,6 +15,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { LoginFailureComponent } from './login/login-failure/login-failure.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderDetailsComponent } from './order/order-details/order-details.component';
+import {RoleGuard} from "./commons/role-guard";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { OrderDetailsComponent } from './order/order-details/order-details.compo
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RoleGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

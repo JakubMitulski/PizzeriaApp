@@ -10,6 +10,7 @@ import {AdminPageComponent} from "./admin-page/admin-page.component";
 import {LoginFailureComponent} from "./login/login-failure/login-failure.component";
 import {OrderListComponent} from "./order/order-list/order-list.component";
 import {OrderDetailsComponent} from "./order/order-details/order-details.component";
+import {RoleGuard} from "./commons/role-guard";
 
 const routes: Routes = [
   {path: '', redirectTo: '/menu',  pathMatch: 'full'},
@@ -22,13 +23,11 @@ const routes: Routes = [
   {path: 'summary', component: OrderSummaryComponent},
   {path: 'info', component: OrderInfoComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminPageComponent},
+  {path: 'admin', component: AdminPageComponent, canActivate: [ RoleGuard ]},
   {path: 'login-failure', component: LoginFailureComponent},
-  {path: 'orders', component: OrderListComponent},
-  {path: 'orders/:id', component: OrderDetailsComponent},
+  {path: 'orders', component: OrderListComponent, canActivate: [ RoleGuard ]},
+  {path: 'orders/:id', component: OrderDetailsComponent, canActivate: [ RoleGuard ]},
 ];
-
-//TODO dodac guarda can activate
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
