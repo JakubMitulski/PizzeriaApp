@@ -32,7 +32,7 @@
   </table>
 
   <nav class="small-nav">
-    <a routerLink="/order">Go to your order</a>
+    <a routerLink="/order" *ngIf="orderService.getOrder().length > 0">Go to your order</a>
   </nav>
 
 </div>

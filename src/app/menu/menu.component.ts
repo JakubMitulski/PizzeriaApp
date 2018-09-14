@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private menuService: MenuService,
-    private orderService: OrderService,
+    public orderService: OrderService,
     private location: Location,
     private router: Router,
   ) {
