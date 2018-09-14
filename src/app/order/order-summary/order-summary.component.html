@@ -13,7 +13,7 @@
       <br>Phone number:
       <input type="text" formControlName="phone" value="Phone number" required minlength="3">
       <br><br>
-      <button class="small-nav" type="submit">Submit</button>
+      <button class="small-nav" type="submit" [disabled]="!(orderForm.valid)">Submit</button>
     </form>
   </div>
 </div>

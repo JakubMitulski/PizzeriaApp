@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Order} from "../../model/order";
 import {Meal} from "../../model/meal";
 import {OrderService} from "../../services/order.service";
@@ -17,10 +17,10 @@ export class OrderSummaryComponent implements OnInit {
   meals: Meal[] = [];
 
   orderForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormControl(''),
-    phone: new FormControl(''),
+    firstName: new FormControl('', [ Validators.required ]),
+    lastName: new FormControl('', [ Validators.required ]),
+    address: new FormControl('', [ Validators.required ]),
+    phone: new FormControl('', [ Validators.required ]),
   });
 
   constructor(readonly orderService: OrderService, private router: Router) {
