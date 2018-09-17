@@ -1,8 +1,7 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 
-import { LoginService } from './login.service';
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {LoginService} from './login.service';
+import {HttpClientModule} from "@angular/common/http";
 import {RouterTestingModule} from "@angular/router/testing";
 
 describe('LoginService', () => {
