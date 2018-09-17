@@ -41,13 +41,14 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
     this.order.status = 'ordered';
     this.order.meals = this.meals;
     this.order.orderDate = new Date();
-    this.sub = this.orderService.saveOrder(this.order).subscribe();
-    this.orderService.clearOrder();
-    this.router.navigate(['/info']);
+    this.sub = this.orderService.saveOrder(this.order).subscribe(() => {
+      this.orderService.clearOrder();
+      this.router.navigate(['/info']);
+    });
   }
 
   ngOnDestroy(): void {
-    // this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 
 }
